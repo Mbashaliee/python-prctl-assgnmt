@@ -1,0 +1,175 @@
+#Level 1
+class Statistics:
+ 
+    def __init__(self, data):
+ 
+        self.data = data
+
+    def mean(self):
+ 
+        return sum(self.data) / len(self.data)
+
+    def median(self):
+ 
+        sorted_data = sorted(self.data)
+ 
+        n = len(sorted_data)
+ 
+        if n % 2 == 0:
+ 
+            return (sorted_data[n//2 - 1] + sorted_data[n//2]) / 2
+ 
+        else:
+ 
+            return sorted_data[n//2]
+
+    def mode(self):
+ 
+        freq_dict = {}
+ 
+        for num in self.data:
+ 
+            freq_dict[num] = freq_dict.get(num, 0) + 1
+ 
+        max_freq = max(freq_dict.values())
+ 
+        modes = [num for num, freq in freq_dict.items() if freq == max_freq]
+ 
+        return modes
+
+    def range(self):
+
+
+        return max(self.data) - min(self.data)
+
+    def variance(self):
+
+        mean = self.mean()
+
+        return sum((x - mean) ** 2 for x in self.data) / len(self.data)
+
+    def standard_deviation(self):
+
+        return self.variance() ** 0.5
+
+    def min_max(self):
+
+        return min(self.data), max(self.data)
+
+    def count(self):
+
+        return len(self.data)
+
+    def percentile(self, percentile):
+
+        sorted_data = sorted(self.data)
+
+        index = (percentile / 100) * (len(sorted_data) - 1)
+
+        if index.is_integer():
+
+            return sorted_data[int(index)]
+
+        else:
+
+            lower_index = int(index // 1)
+
+            upper_index = lower_index + 1
+
+            lower_value = sorted_data[lower_index]
+
+            upper_value = sorted_data[upper_index]
+
+            return lower_value + ((upper_value - lower_value) * (index % 1))
+
+    def frequency_distribution(self):
+
+        freq_dict = {}
+
+        for num in self.data:
+
+            freq_dict[num] = freq_dict.get(num, 0) + 1
+
+        return freq_dict
+
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10]
+
+stats = Statistics(data)
+
+print("Mean:", stats.mean())
+
+print("Median:", stats.median())
+
+print("Mode:", stats.mode())
+
+print("Range:", stats.range())
+
+print("Variance:", stats.variance())
+
+print("Standard Deviation:", stats.standard_deviation())
+
+print("Min, Max:", stats.min_max())
+
+print("Count:", stats.count())
+
+print("Percentile (50th percentile):", stats.percentile(50))
+
+print("Frequency Distribution:", stats.frequency_distribution())
+
+
+#Level 2
+class PersonAccount:
+
+    def __init__(self, firstname, lastname):
+
+        self.firstname = firstname
+
+        self.lastname = lastname
+
+        self.incomes = []
+
+        self.expenses = []
+
+    def add_income(self, amount, description):
+
+        self.incomes.append((amount, description))
+
+    def add_expense(self, amount, description):
+
+        self.expenses.append((amount, description))
+
+    def total_income(self):
+
+        return sum(amount for amount, _ in self.incomes)
+
+    def total_expense(self):
+
+        return sum(amount for amount, _ in self.expenses)
+
+    def account_balance(self):
+
+        return self.total_income() - self.total_expense()
+
+    def account_info(self):
+
+        info = f"Account Information for {self.firstname} {self.lastname}:\n"
+
+        info += f"Total Income: {self.total_income()}\n"
+
+        info += f"Total Expense: {self.total_expense()}\n"
+
+        info += f"Account Balance: {self.account_balance()}\n"
+
+        return info
+
+person = PersonAccount("John", "Doe")
+
+person.add_income(1000, "Salary")
+
+person.add_income(200, "Bonus")
+
+person.add_expense(300, "Rent")
+
+person.add_expense(150, "Utilities")
+
+print(person.account_info())

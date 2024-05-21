@@ -1,0 +1,174 @@
+#the diference between map, filter, and reduce
+'''
+the diference between map, filter, and reduce is, 
+Map is a built-in function which is iterable at the sametime, and 
+filter function calls the specified function which returns boolean for each item of the specified iterable, 
+while reduce is defined in the functools module and it should import it from the module.  
+'''
+
+#Difference between higher order function, closure and decorator
+'''Higher order function are treated as first class citizens, and 
+closure is the allowing a nested function to access the outer scope of the enclosing function, and 
+Decorator is a design pattern in python that allows a user to add new functionality to an existing object without modifying it's structure.'''
+
+
+#define a call function before map, filter or reduce
+
+#using loop to print each country in the countries list.
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+
+for country in countries:
+
+    print(country)
+
+#Use for to print each name in the names list.
+names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
+
+for name in  names:
+
+    print(name)
+
+
+#Use for to print each number in the numbers list.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for num in numbers:
+
+    print(num)
+
+
+
+#Use map to create a new list by changing each country to uppercase in the countries list
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+
+uppercase_countries=list(map(str.upper, countries))
+
+print(uppercase_countries)
+
+
+#Use map to create a new list by changing each number to its square in the numbers list
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+def square(x):
+
+    return x**2
+
+number_squared=map(square, numbers)
+
+print(list(number_squared))
+
+
+#Use map to change each name to uppercase in the names list
+names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
+
+uppercase_names=list(map(str.upper, names))
+
+print(list(uppercase_names))
+
+
+#Use filter to filter out countries containing 'land'.
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+
+filtered_countreis=list(filter(lambda country: 'land' in country.lower(), countries))
+
+print(list(filtered_countreis))
+
+
+#Use filter to filter out countries having exactly six characters.
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+
+def country_with_exact_six_character(country):
+
+
+    if len(country)==6:
+
+        return True
+    
+    return False
+
+exactly_six_character=filter(country_with_exact_six_character, countries)
+
+print(list(exactly_six_character))
+
+
+#Use filter to filter out countries containing six letters and more in the country list.
+filtered_countries=list(filter(lambda country: len(country) >=6, countries))
+
+print(list(filtered_countries))
+
+
+#Use filter to filter out countries starting with an 'E'
+filtered_countries=list(filter(lambda country: country.startswith('E'), countries))
+
+print(filtered_countries)
+
+#Chain two or more list iterators (eg. arr.map(callback).filter(callback).reduce(callback))
+from functools import reduce
+
+numbers=[1, 2, 3, 4, 5, 6]
+
+result=reduce(lambda x, y: x+y, map(lambda x:x * 2, filter(lambda x:x % 2==0, numbers)))
+
+print(result)
+
+
+#Declare a function called get_string_lists which takes a list as a parameter and then returns a list containing only string items.
+def get_string_lists(input_list):
+
+    return [item for item in input_list if isinstance(item, str)]
+
+input_list=[1, 'apple', True, 'banana', 3.142, 'cherry']
+
+string_list=get_string_lists(input_list)
+
+print(string_list)
+
+
+#Use reduce to sum all the numbers in the numbers list.
+numbers_str=['11', '12']
+
+def sum_all_the_numbers(a, b):
+    
+    return int(a)+int(b)
+
+total=reduce(sum_all_the_numbers, numbers_str)
+
+print(total)
+
+
+#Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries
+from functools import reduce
+
+concatenate= ['Estonia', 'finland', 'sweden', 'denmark', 'norway', 'iceland']
+
+concatenated_countries=reduce(lambda x, y:x+ ', '+y, countries)
+
+sentence=concatenated_countries='are north european countries'
+
+print(sentence)
+
+#Create a function returning a dictionary, where keys stand for starting letters of countries and values are the number of country names starting with that letter.
+def starting_letter_count(countries):
+
+    letter_count={}
+
+    for coutry in countries:
+
+        first_letter=country[0].upper()
+
+        if first_letter in letter_count:
+
+            letter_count[first_letter]+=1
+
+        else:
+
+            letter_count[first_letter]=1
+
+    return letter_count
+
+result=starting_letter_count(countries)
+
+print(result)
+
+
+

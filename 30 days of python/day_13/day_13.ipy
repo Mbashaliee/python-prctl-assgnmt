@@ -1,0 +1,51 @@
+#Filter only negative and zero in the list using list comprehension
+
+negative_and_zero_numbers=[i for i in range(-10, 10) if i <=0]
+
+print(negative_and_zero_numbers)
+
+#fluttening list to one dimension
+
+list_of_list=[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+flattening_list=[number for row in list_of_list for number in row]
+
+print(flattening_list)
+
+
+#using list comprehension
+result = [(i, )+ tuple(j**i for j in range(1, 8)) for i in range(11)]
+
+print(result)
+
+#flattening a new list
+countries=[[('finland', 'helsinki')], [('sweden', 'stockholm')], [('norway', 'oslo')]]
+
+flattening_list= [[country.upper(), country[:3].upper(), city.upper()] for sublist in countries for country, city in sublist]
+
+print(flattening_list)
+
+
+#changing list to a list of dictionary
+
+countries= [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+
+transformed_countries_list=[{'countries': country.upper(), 'city': city.upper()} for sublist in countries for country, city in sublist]
+
+print(transformed_countries_list)
+
+
+#changing list to a list of concatenated string
+names=[[('Asabenah', 'Yatayeh')], [('David', 'smith')], [('Donald', 'Trump')], [('Bill', 'gate')]]
+
+concatenated_list=[' '.join([first_name, last_name]) for sublist in names for first_name, last_name in sublist]
+
+print(concatenated_list)
+
+
+#Write a lambda function which can solve a slope or y-intercept of linear functions.
+linear_function= lambda x1, y1, x2, y2, type_: (y2-y1)/(x2-x1) if type_ =='slope' else y1-(x1*((y2-y1)/(x2-x1)))
+
+slope=linear_function(1, 1, 2, 3, 'slope')
+
+print("slope: ", slope)

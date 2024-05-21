@@ -1,0 +1,208 @@
+#concatenating
+
+a='Thirty'
+
+b='days'
+
+c='of'
+
+d='python'
+
+space=' '
+
+f=a+space+b+space+c+space+d
+
+print(f)
+
+first_word='Coding'
+
+second_word='for'
+
+third_word='All'
+
+space=' '
+
+full_sentnce=first_word+space+second_word+space+third_word
+
+print(full_sentnce)
+
+#declaring a variable
+
+company='Coding for All'
+
+print(company)
+
+#printing upper and lowercases
+
+print(len(company))
+
+challenge_uppercase='this sentence will be swapped to uppercase'
+
+print(challenge_uppercase.swapcase())
+
+challenge_lowercase='THIS SENTENCE WILL BE CHANGE TO LOWERCASE'
+
+print(challenge_lowercase.swapcase())
+
+challenge='coding for all'
+
+print(challenge.capitalize(), challenge.title(), challenge.swapcase())
+
+#finding code
+
+print(challenge.find('coding'))
+
+#replacing
+
+print(challenge.replace('coding for all', 'python'))
+
+
+#replacing
+
+challenge='python for everyone'
+
+print(challenge.replace('python for everyone', 'python for all'))
+
+#spliting strings
+
+challenge='facebook, google, microsoft, apple, IBM, oracle, amzon'
+
+print(challenge.split(', '))
+
+#character finding
+
+language='string'
+
+character=language[0]
+
+print(character)
+
+#character at index
+
+character=challenge[10]
+
+print(character)
+
+#occurance
+
+challenge='coding is for all'
+
+print(challenge.count('coding'))
+
+print(challenge.count(f))
+
+print(challenge.count(d))
+
+challenge='you cannot end a sentence with because because because is a conjuction'
+
+print(challenge.count('because'))
+
+#slice
+
+challenge='you cannot end a sentence with because because because is a conjuction'
+
+because_because_because=language[3:4:5]
+
+print(because_because_because)
+
+# Define the string
+string = 'Coding For All'
+
+if string.startswith('Coding'):
+    
+    print("Yes, 'Coding For All' starts with 'Coding'.")
+
+else:
+    
+    print("No, 'Coding For All' does not start with 'Coding'.")
+
+string = 'Coding For All'
+
+if string.endswith('Coding'):
+    
+    print("Yes, 'Coding For All' ends with 'Coding'.")
+
+else:
+    
+    print("No, 'Coding For All' does not end with 'Coding'.")
+
+challenge='thirty days of python'
+
+print(challenge.strip('thon'))
+
+#isidentifier
+
+challenge='30DaysOfPython'
+
+print(challenge.isidentifier())
+
+challenge='thirt_days_python'
+
+print(challenge.isidentifier())
+
+#liberies joining
+
+liberies_joining=['Djangon', 'Flask', 'Bottle', 'pyramid', 'Falcon']
+
+result='# ' .join(liberies_joining)
+
+print(result)
+
+challenge='I am enjoying this challenge'
+
+print(challenge.split())
+
+challenge='I am enjoying this challenge'
+
+print(challenge.split(', '))
+
+#escape sequence
+
+Name_1='Name'
+
+Nmae_2='asabeneh'
+
+age_1='age'
+
+age_2='250'
+
+country_1='country'
+
+country_2='Finland'
+
+city_1='city'
+
+city_2='Helsinki'
+
+print('Name_1\t', 'age_1\t', 'country_1\t', 'city_1\t')
+
+print('Name_2\t', 'age_2\t', 'country_2\t', 'city_2\t')
+
+#formatting strings
+
+radius = 10
+
+area = 3.14*radius**2
+
+print("The area of a circle with radius {} is {:.2f} square meters.".format(radius, area))
+
+# Display results using format strings
+
+a = 8
+
+b = 6
+
+print('{} + {} = {}'.format(a, b, a + b))
+
+print('{} - {} = {}'.format(a, b, a - b))
+
+print('{} * {} = {}'.format(a, b, a * b))
+
+print('{} / {} = {:.2f}'.format(a, b, a / b)) # limits it to two digits after decimal
+
+print('{} % {} = {}'.format(a, b, a % b))
+
+print('{} // {} = {}'.format(a, b, a // b))
+
+print('{} ** {} = {}'.format(a, b, a ** b))
+

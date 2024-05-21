@@ -1,0 +1,65 @@
+#   created empty tuple
+
+empty_tuple=()
+
+print(empty_tuple)
+
+#brothers and sisters 
+
+family_list='Ibrahim', 'Muhdsani', 'Mahbub', 'Muqaffa', 'Khadija'
+
+print(family_list)
+
+#family numbers
+
+print(len(family_list))
+
+#full family tuple
+
+parent_names='Bashir', 'Hauwa'
+
+family_members=family_list+parent_names
+
+print(family_members)
+
+#unpacking siblings
+
+fruits='mango', 'apple', 'orange', 'pineapple'
+
+vegetable='onion', 'maize', 'tomato', 'pepe'
+
+animal_product='meat', 'rug', 'raw'
+
+food_stuff_tp=fruits+vegetable+animal_product
+
+print(food_stuff_tp)
+
+#changing tuple to a list
+
+food_stuff_lt=fruits+vegetable+animal_product
+
+print(food_stuff_lt)
+
+#slicing items
+
+food_stuff_lt = food_stuff_tp[5:-5]
+
+print(food_stuff_lt)
+
+food_stuff_lt = food_stuff_tp[0:3]
+
+food_stuff_lt = food_stuff_tp[-11:8]
+
+print(food_stuff_lt)
+
+
+#delete the the whole family tuple
+
+del food_stuff_tp
+
+#checking
+
+animal_product='meat', 'rug', 'raw'
+
+print('Estonia', in animal_product)
+

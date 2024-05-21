@@ -1,0 +1,162 @@
+#Writ a function which generates a six digit/character random_user_id.
+import random
+import string
+
+def random_user_id():
+
+    return ''.join(random.choices(string.ascii_lowercase+string.digits, k=6))
+
+print(random_user_id())
+
+
+#Modify the previous task
+import random
+
+import string
+
+def user_id_gen_by_user():
+
+    num_chars=int(input("Enter the number of chaacter: "))
+
+    num_ids=int(input("Enter the number of IDs: "))
+
+    user_ids=[]
+
+    for _ in range(num_ids):
+    
+        user_id=''.join(random.choices(string.ascii_letters+string.digits, k=num_chars))
+
+        user_ids.append(user_id)
+
+    return '\n'.join(user_ids) 
+
+print(user_id_gen_by_user())
+
+
+#Write a function named rgb_color_gen. It will generate rgb colors (3 values ranging from 0 to 255 each).
+import random
+
+def rgb_color_gen():
+
+    r=random.randint(0, 255)
+    
+    g=random.randint(0, 255)
+    
+    b=random.randint(0, 255)
+
+
+    return f"rgb({r}, {g}, {b})"
+
+print(rgb_color_gen())
+
+
+#Write a function list_of_hexa_colors which returns any number of hexadecimal colors in an array (six hexadecimal numbers written after #. Hexadecimal numeral system is made out of 16 symbols, 0-9 and first 6 letters of the alphabet, a-f. Check the task 6 for output examples).
+import random
+
+def list_of_hexa_colors(num_colors):
+
+    hexa_colors=[]
+
+    for _ in range(num_colors):
+
+        color=''.join(random.choices('0123456789ABCDEF', k=6))
+
+        hexa_colors.append('#' + color)
+
+
+    return hexa_colors
+
+
+print(list_of_hexa_colors(5))
+
+
+#Write a function list_of_rgb_colors which returns any number of RGB colors in an array.
+import random
+
+def list_of_rgb_colors(num_colors):
+
+    rgb_color=[]
+
+    for _ in range(num_colors):
+
+
+        r=random.randint(0, 255)
+
+        g=random.randint(0, 255)
+
+        b=random.randint(0, 255)
+
+        rgb_colors.append(f"rgb({r}, {g}, {b})")
+
+    return rgb_colors
+
+
+print(list_of_rgb_colors())
+
+
+#Write a function generate_colors which can generate any number of hexa or rgb colors.
+import random
+
+def generate_colors(num_colors, color_format='hexa'):
+
+    colors=[]
+
+    if color_format=='hexa':
+
+        for _ in range(num_colors):
+
+            color='#' + ''.join(random.choices('0123456789ABCDEF', k=6))
+
+    elif color_format=='rgb':
+
+            for _ in range(num_colors):
+
+                r=random.randint(0, 255)
+
+                g=random.randint(0, 255)
+
+                d=random.randint(0, 255)
+
+                color.append(f"rgb({r}, {g}, {b})")
+
+    else:
+        
+            print("Invalid........")
+
+    return color
+
+print(generate_colors(5, 'hexa'))
+
+print(generate_colors(5, 'rhb'))
+
+
+#Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
+import random
+
+def shuffle_list(list):
+     
+     shuffle_list=list[:]
+     random.shuffle(shuffled_list)
+
+     return shuffled_list
+
+my_list=[1, 2, 3, 4, 5]
+
+print(shuffle_list(my_list))
+
+
+
+#Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
+import random
+
+def seven_random_numbers():
+     
+
+     numbers=list(range(10))
+
+     random.shuffle(numbers)
+
+     return numbers[:7]
+
+
+print(seven_random_numbers())

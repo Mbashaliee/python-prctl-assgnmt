@@ -1,0 +1,113 @@
+# Using a for loop
+for i in range(11):
+   
+    print(i)
+
+#using a while loop
+i = 0
+
+while i <= 10:
+
+    print(i)
+
+    i += 1
+
+# Using a for loop
+for i in range(11):
+    print(i)
+
+#using a while loop from 10 to 0
+
+i = 10
+
+while i<= 10:
+
+    print(i)
+
+    i += 1 
+
+
+#
+for i in range(1, 8):
+
+    print('#' * i)
+
+
+#
+for x in range(8):
+
+    for t in range(8):
+
+        print('#', end='')
+
+    print(x)
+
+#
+for i in range(11):
+
+    print(f"{i} x {i} = {i*i}")
+
+#iterating list
+
+my_list=['python', 'numpy', 'pandas', 'django', 'flask']
+
+for item in my_list:
+
+    print(item)
+
+
+#iterating with even numbers
+for i in range(0, 101, 2):
+    
+    print(i)
+
+
+#iterating with even numbers
+for i in range(1, 101, 2):
+
+    print(i)
+
+
+#calculating sum of loop for number
+total_sum = 0
+
+for i in range(101):
+
+    total_sum += i
+
+print("The sum of numbers from 0 to 100 is :", total_sum)
+
+
+#sum of odd and even numbers from the loop
+
+even_sum = 0
+
+odd_even = 0
+
+for i in range(101):
+
+    if i % 2 == 0:
+
+        even_sum += i
+    else:
+
+        odd_even += i
+
+print("The sum of even number from 0 to 100 is :", even_sum)
+
+print("The sum of odd even number from 0 to 100 is:", odd_even)
+
+#reversing list
+# Original list
+fruit_list = ['banana', 'orange', 'mango', 'lemon']
+
+# Initialize an empty list to store the reversed order
+reversed_fruit_list = []
+
+# Loop through the original list in reverse
+for fruit in reversed(fruit_list):
+   
+    reversed_fruit_list.append(fruit)
+
+# Print the reversed list
+print("Reversed fruit list:", reversed_fruit_list)

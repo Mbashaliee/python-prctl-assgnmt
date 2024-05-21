@@ -1,0 +1,105 @@
+# sets
+
+it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+
+A = {19, 22, 24, 20, 25, 26}
+
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+
+age = [22, 19, 24, 25, 26, 24, 25, 24]
+
+#finding the length
+
+print(len(it_companies))
+
+#adding twitter to the company
+
+it_companies.add('twitter')
+
+print(it_companies)
+
+#inserting multiple it companies
+
+it_companies.update(['cousera', 'udemy'])
+
+print(it_companies)
+
+#removing one company from the set
+
+it_companies.pop()
+
+print(it_companies)
+
+#differnece between discard and remove
+
+#remove() raises a KeyError while discard() does not raise an error and simply does nothing.
+
+#joining A and B
+
+A = {19, 22, 24, 20, 25, 26}
+
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+
+print(A.union(B))
+
+#finding intersection
+
+print(A.intersection(B))
+
+#disjoining set
+
+print(A.isdisjoint(B))
+
+#joining A with B and B with A
+
+print(A.union(B))
+
+print(B.union(A))
+
+#symmetric difference
+
+print(A.symmetric_difference(B))
+
+#deleting the set complete
+
+del it_companies
+
+#converting and comparing sets
+
+A = {19, 22, 24, 20, 25, 26}
+
+B = {19, 22, 20, 25, 26, 24, 28, 27}
+
+B_set=set(B)
+
+if len(B) > len(B_set):
+    
+    print("The length of the set is bigger than length of the set.")
+    
+elif len(B) < len(B_set):
+    
+    print("The length of the set is bigger than the length of the list.")
+    
+else:
+    
+    print("The length of the list is equal to the length of the set.")
+    
+#Explaining difference 
+
+#Strings are sequences of characters and immutable.
+
+#Lists are ordered collections of elements and mutable.
+
+#Tuples are ordered collections of elements and immutable.
+
+#Sets are unordered collections of unique elements and mutable.
+
+#
+
+sentence = "I am a teacher and I love to inspire and teach people."
+
+unique_words=set('I')
+
+num_unique_words=len(unique_words)
+
+print("Number of unique words: " ,num_unique_words)

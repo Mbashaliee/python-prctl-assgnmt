@@ -1,0 +1,224 @@
+#empty list
+empty_list=list()
+
+print(len(empty_list))
+
+#listing items
+fruits=['banana', 'apple', 'orange', 'mango', 'pineapple']
+
+print('Fruits list: ', fruits)
+
+#length of the list
+print(len(fruits))
+
+#get some fixed items
+
+first_item=fruits[0]
+
+middle_item=fruits[2]
+
+last_item=fruits[4]
+
+print(first_item)
+
+print(middle_item)
+
+print(last_item)
+
+#declaring a list variable
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+first=[0]
+
+middle=[3]
+ 
+last=[6]
+
+print(list(it_company))
+
+print(len(it_company))
+
+print(first)
+
+print(middle)
+
+print(last)
+
+#modifying and printing
+
+fruits[0]='facebook'
+
+print(fruits)
+
+#adding 
+
+it_company.append('facebook')
+
+print(it_company)
+
+it_company.insert(3, 'Iphone')
+
+it_company='information and communication tech'
+
+print(it_company.swapcase())
+
+#joing string with '#; '
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+joined_string='#; '.join(it_company)
+
+print(joined_string)
+
+#checking of existance
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+does_exist='samsung' in it_company
+
+print(does_exist)
+
+#sorting
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+it_company.sort()
+
+print(it_company)
+
+#reversing 
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+it_company.reverse()
+
+print(it_company)
+
+#slicing index
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+facebook_google_microsoft = fruits[-6:-3]
+
+print(facebook_google_microsoft) 
+
+#removing
+
+it_company=['facebook', 'google', 'microsoft', 'apple', 'IBM', 'oracle', 'amazon']
+
+it_company.remove('facebook')
+
+print(it_company)
+
+#deleting all
+
+it_company.clear()
+
+print(it_company)
+
+#joing
+
+front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+
+back_end = ['Node','Express', 'MongoDB']
+
+front_end_and_back_end=front_end+back_end
+
+print(front_end_and_back_end)
+
+#inserting
+
+front_end_and_back_end.insert(5, 'python',)
+
+front_end_and_back_end.insert(6, 'SQL',)
+
+#finding some terms
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+sorted_ages = sorted(ages)
+
+min_age = sorted_ages[0]
+
+max_age = sorted_ages[-1]
+
+print("Minimum age:", min_age)
+
+print("Maximum age:", max_age)
+
+#adding
+
+ages.sort()
+
+min_age=ages[0]
+
+max_age=ages[-1]
+
+ages.append(min_age)
+
+ages.append(max_age)
+
+print("Updated list of ages: ", ages)
+
+#finding the mean age
+
+ages.sort()
+
+n = len(ages)
+
+if n % 2 == 1:  # Odd length
+    
+    median_age = ages[n // 2]
+
+else:  # Even length
+
+    median_age = (ages[n // 2 - 1] + ages[n // 2]) / 2
+
+print("Median age:", median_age)
+
+#finding the average sum
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+total_age=sum(ages)
+
+num_age=len(ages)
+
+average_age=total_age/num_age
+
+print("Average age: ",average_age)
+
+#finding the range
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+age_range=max(ages)-min(ages)
+
+print("Range of ages: ", age_range)
+
+#comparing values
+
+ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+average_age=sum(ages)/len(ages)
+
+min_age=min(ages)
+
+max_age=max(ages)
+
+difference_min_average=abs(min_age-average_age)
+
+difference_max_average=abs(max_age-average_age)
+
+if difference_min_average > difference_max_average:
+   
+    print("The absolute difference between min and average age is greater.")
+
+elif difference_min_average < difference_max_average:
+
+    print("The absolute difference between max and average age is greater.")
+
+else:
+
+    print("The absolute differences between min and average age and max and average age are equal.")
